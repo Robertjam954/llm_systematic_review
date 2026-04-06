@@ -1,0 +1,117 @@
+---
+schema_version: "1.0"
+description: "Metric definitions for cross-method comparison"
+
+retrieval_metrics:
+  precision:
+    definition: "Fraction of retrieved documents that are truly relevant (in gold standard set)"
+    formula: "TP / (TP + FP)"
+    level: document
+
+  recall:
+    definition: "Fraction of gold standard documents successfully retrieved"
+    formula: "TP / (TP + FN)"
+    level: document
+    note: "Primary metric — missing a relevant article is a more critical error than retrieving an irrelevant one"
+
+  f1:
+    definition: "Harmonic mean of precision and recall"
+    formula: "2 * (P * R) / (P + R)"
+    level: document
+
+  thematic_coverage:
+    definition: "Proportion of predefined clinical/methodological themes represented in retrieved set"
+    formula: "themes_covered / themes_total"
+    themes_source: "eval/schemas/theme_keywords.yaml"
+
+operational_metrics:
+  time_to_results:
+    definition: "Wall-clock time from query submission to final result set"
+    unit: seconds
+
+  screening_burden:
+    definition: "Number of records requiring human title/abstract screening"
+    note: "For Boolean search = total retrieved; for RAG methods = retrieved chunks requiring review"
+
+  reproducibility:
+    definition: "Jaccard similarity of retrieved doc_id sets across repeated runs (RAG methods only)"
+    formula: "|run_A ∩ run_B| / |run_A ∪ run_B|"
+    n_runs: 3
+
+quality_metrics:
+  inter_rater_reliability:
+    definition: "Cohen's kappa between two independent screeners (Boolean search only)"
+    tool: "sklearn.metrics.cohen_kappa_score"
+
+  extraction_agreement:
+    definition: "Exact-match agreement rate on structured features between LLM extractor and human reviewer"
+    sample_size: 50
+
+# ---------------------------------------------------------------------------
+# NIAH (Needle-in-a-Haystack) stress test metrics
+# Ref: https://github.com/gkamradt/LLMTest_NeedleInAHaystack
+# ---------------------------------------------------------------------------
+niah_metrics:
+  description: >
+    Stress-test metrics evaluated across a (context_length × depth) grid.
+    A specific factual 'needle' is injected at depth D% through a background
+    haystack of biomedical prose. The pipeline is asked to retrieve the needle.
+    Applies to both standard RAG (NB03) and agentic RAG (NB08).
+
+  sweep_grid:
+    context_lengths: [2000, 8000, 16000, 32000]  # tokens (approx. chars / 4)
+    depths: [0.1, 0.25, 0.5, 0.75, 0.9]          # fraction through haystack
+
+  # Shared metrics (standard RAG and agentic RAG)
+  needle_retrieved:
+    definition: "Whether any retrieved chunk contained the needle (substring match on unique numeric fragment)"
+    type: bool
+    applies_to: [standard_rag, agentic_rag]
+
+  needle_in_answer:
+    definition: "Whether the final generated answer correctly referenced the needle fact"
+    type: bool
+    applies_to: [standard_rag, agentic_rag]
+
+  faithfulness_niah:
+    definition: "DeepEval FaithfulnessMetric score for the NIAH answer vs. retrieval context"
+    type: float [0, 1]
+    tool: "deepeval.metrics.FaithfulnessMetric"
+    judge_model: gpt-4o
+    applies_to: [standard_rag, agentic_rag]
+
+  latency_niah:
+    definition: "Wall-clock time per NIAH cell"
+    unit: seconds
+    applies_to: [standard_rag, agentic_rag]
+
+  # Agentic RAG exclusive metrics
+  subquery_targets_needle:
+    definition: >
+      Whether any of the agent's decomposed sub-queries semantically targets the needle topic.
+      Assessed via keyword overlap with needle content.
+    type: bool
+    applies_to: [agentic_rag]
+    note: "Distinguishes planning failure (sub-query misses topic) from retrieval failure (sub-query correct but chunk not surfaced)"
+
+  iteration_retrieved:
+    definition: "Which agent loop iteration (1, 2, ...) first retrieved a chunk containing the needle"
+    type: int | null
+    applies_to: [agentic_rag]
+    note: "null = needle never retrieved. Values > 1 show agentic refinement rescued a failed first-pass retrieval"
+
+  n_iterations:
+    definition: "Total number of agent loop iterations before stopping"
+    type: int
+    applies_to: [agentic_rag]
+
+  # Cross-method comparison
+  agentic_advantage:
+    definition: "Cell where agentic RAG passed (needle_retrieved AND needle_in_answer) but standard RAG failed"
+    type: bool
+    interpretation: "Cells where multi-pass retrieval and query refinement added value over static single-pass"
+
+  standard_advantage:
+    definition: "Cell where standard RAG passed but agentic RAG failed"
+    type: bool
+    interpretation: "Cells where agentic overhead (decomposition, refinement loops) may have introduced noise"

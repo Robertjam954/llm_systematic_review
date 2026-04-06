@@ -1,0 +1,55 @@
+---
+schema_version: "1.0"
+review_title: "LLM optimization strategies for feature extraction from radiology and pathology documents"
+
+inclusion_criteria:
+  population:
+    description: "Radiology reports OR pathology reports (clinical text)"
+    keywords:
+      - radiology report
+      - radiological report
+      - pathology report
+      - histopathology report
+      - surgical pathology
+      - cytopathology
+      - diagnostic imaging report
+  intervention:
+    description: "LLM or deep learning NLP optimization strategy"
+    keywords:
+      - large language model
+      - LLM
+      - GPT
+      - BERT
+      - transformer
+      - prompt engineering
+      - fine-tuning
+      - retrieval-augmented generation
+      - RAG
+      - chain-of-thought
+      - instruction tuning
+      - few-shot
+      - zero-shot
+  outcome:
+    description: "Feature extraction, NER, classification, or structured data extraction"
+    keywords:
+      - feature extraction
+      - information extraction
+      - named entity recognition
+      - NER
+      - structured extraction
+      - classification
+      - data extraction
+  study_type:
+    - original research
+    - technical report
+    - validation study
+  date_range: "2018-01-01 to 2026-12-31"
+  language: English
+
+exclusion_criteria:
+  - "No radiology or pathology text involved"
+  - "No LLM or deep learning NLP component"
+  - "Conference abstract only (no full text)"
+  - "Review, editorial, or opinion without primary data"
+  - "Non-English language"
+  - "Pre-2018 publication"

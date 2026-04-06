@@ -1,0 +1,46 @@
+# Environment
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data — private / PHI (never committed)
+data_private/
+data/raw/
+*.pdf
+*.docx
+
+# Large model artefacts
+models/*.bin
+models/*.pt
+models/*.safetensors
+*.ckpt
+
+# Vector store local artefacts
+chroma_db/
+*.faiss
+*.index
+
+# Logs
+logs/
+*.log
+
+# OS
+Thumbs.db

@@ -1,0 +1,10 @@
+prompt_id,version,method,task,description,template_file,created,author,notes
+P001,v1.0,standard_rag,synthesis,Basic RAG synthesis — single context block,library/rag_synthesis_v1.txt,2026-04,,
+P002,v1.1,standard_rag,synthesis,RAG synthesis with citation instructions,library/rag_synthesis_v1_1.txt,2026-04,,
+P003,v1.0,agentic_rag,decomposition,Sub-query decomposition — chain-of-thought,library/agent_decompose_v1.txt,2026-04,,
+P004,v1.0,agentic_rag,evaluation,Coverage evaluation + refinement decision,library/agent_evaluate_v1.txt,2026-04,,
+P005,v1.0,agentic_rag,synthesis,Agentic synthesis with cited doc_ids,library/agent_synthesis_v1.txt,2026-04,,
+P006,v1.0,extraction,feature_extraction,Structured feature extraction from rad/path abstracts (JSON output),library/extraction_v1.txt,2026-04,,
+P007,v1.1,extraction,feature_extraction,Feature extraction with few-shot examples,library/extraction_v1_1.txt,2026-04,,
+P008,v1.0,screening,title_abstract_screening,Title/abstract relevance screening (include/exclude + reason),library/screening_v1.txt,2026-04,,
+P009,v1.0,all,meta_analysis,Narrative synthesis across included articles,library/narrative_synthesis_v1.txt,2026-04,,

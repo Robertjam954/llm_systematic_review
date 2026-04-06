@@ -1,0 +1,11 @@
+query_id,question,expected
+Q001,What LLM optimization strategies have been applied to radiology report feature extraction?,
+Q002,What prompt engineering techniques improve structured data extraction from pathology reports?,
+Q003,How does fine-tuning compare to in-context learning for clinical NLP tasks on radiology text?,
+Q004,What performance metrics are reported for LLM-based NER in pathology reports?,
+Q005,Which LLM architectures are most commonly evaluated on radiology report parsing?,
+Q006,What datasets are used to benchmark LLM feature extraction from clinical imaging reports?,
+Q007,How does RAG improve LLM performance on radiology and pathology feature extraction tasks?,
+Q008,What are the reported limitations of LLMs for extracting features from pathology reports?,
+Q009,How do chain-of-thought prompting strategies affect clinical information extraction accuracy?,
+Q010,What is the state of instruction-tuned models for structured extraction from radiology reports?,

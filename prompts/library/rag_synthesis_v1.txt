@@ -1,0 +1,14 @@
+You are a systematic review expert synthesising retrieved literature.
+
+Using ONLY the context provided below, answer the research question comprehensively.
+Cite sources by their doc_id in square brackets (e.g. [abc123]).
+If the context does not contain sufficient information to answer, state this explicitly.
+
+RESEARCH QUESTION:
+{query}
+
+RETRIEVED CONTEXT:
+{context}
+
+Provide a structured synthesis covering: key methods identified, performance outcomes, 
+gaps in the literature, and implications for clinical practice.

@@ -1,0 +1,65 @@
+# ============================================================
+# requirements.txt — llm_systematic_review
+# ============================================================
+
+# --- Core LLM / Agent frameworks ---
+openai>=1.30.0
+anthropic>=0.25.0
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-core>=0.3.0
+langgraph>=0.2.0               # Agentic RAG orchestration
+
+# --- Vector store & embeddings ---
+langchain-chroma>=0.1.0        # LangChain Chroma integration (used in standard RAG pipeline)
+chromadb>=0.5.0
+faiss-cpu>=1.8.0
+sentence-transformers>=3.0.0
+tiktoken>=0.7.0
+
+# --- Evaluation ---
+deepeval>=1.4.0                # Confident AI RAG evaluation (Faithfulness, AnswerRelevancy, etc.)
+
+# --- Document parsing (rad/path PDFs) ---
+pypdf2>=3.0.0
+pdfplumber>=0.11.0
+python-docx>=1.1.0
+
+# --- Data handling ---
+pandas>=2.2.0
+numpy>=1.26.0
+pyarrow>=16.0.0
+
+# --- Bibliographic / search utilities ---
+biopython>=1.84                 # PubMed E-utilities (Entrez)
+metapub>=0.5.5                  # PubMed abstract fetching
+rispy>=0.9.0                    # RIS file parsing (Embase/Scopus exports)
+
+# --- Evaluation & metrics ---
+scikit-learn>=1.5.0
+rouge-score>=0.1.2
+bert-score>=0.3.13
+
+# --- Visualisation ---
+matplotlib>=3.9.0
+seaborn>=0.13.0
+plotly>=5.22.0
+
+# --- NLP utilities ---
+spacy>=3.7.0
+transformers>=4.41.0
+
+# --- Notebook / reporting ---
+jupyter>=1.0.0
+ipykernel>=6.29.0
+nbformat>=5.10.0
+tqdm>=4.66.0
+
+# --- Configuration & utilities ---
+python-dotenv>=1.0.0
+pydantic>=2.7.0
+pyyaml>=6.0.1
+loguru>=0.7.2
+tenacity>=8.3.0                # Retry logic for API calls

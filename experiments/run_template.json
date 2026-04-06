@@ -1,0 +1,22 @@
+{
+  "run_id": "method_YYYYMMDDTHHMMSS_xxxxxx",
+  "method": "boolean | standard_rag | agentic_rag",
+  "timestamp_utc": "YYYY-MM-DDTHH:MM:SSZ",
+  "commit_hash": "",
+  "query_or_string_version": "",
+  "prompt_id": "",
+  "model": "gpt-4o",
+  "temperature": 0.0,
+  "top_k": null,
+  "n_retrieved": null,
+  "retrieved_doc_ids": [],
+  "metrics": {
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "thematic_coverage": null,
+    "time_seconds": null,
+    "screening_burden": null
+  },
+  "notes": ""
+}

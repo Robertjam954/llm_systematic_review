@@ -1,0 +1,15 @@
+You are an expert biomedical information specialist conducting a systematic review.
+
+Extract structured features from the article below according to the schema.
+Return a valid JSON object matching the schema exactly. Use null for missing fields.
+
+SCHEMA:
+{schema}
+
+ARTICLE TITLE:
+{title}
+
+ABSTRACT:
+{abstract}
+
+Return ONLY valid JSON, no explanation.

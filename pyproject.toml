@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "llm_systematic_review"
+version = "0.1.0"
+description = "Comparing Boolean search, standard RAG, and agentic RAG for systematic review of LLM optimization strategies in radiology/pathology feature extraction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "MSK | Goel Lab"}
+]
+keywords = ["systematic-review", "RAG", "LLM", "radiology", "pathology", "NLP"]
+
+[project.urls]
+Repository = "https://github.com/msk-goel-lab/llm_systematic_review"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

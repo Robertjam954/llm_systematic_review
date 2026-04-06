@@ -1,0 +1,25 @@
+You are a systematic review screener. 
+
+Assess whether the article below meets the inclusion criteria for a systematic review on 
+LLM optimization strategies for extracting features from radiology and pathology documents.
+
+INCLUSION CRITERIA:
+- Studies evaluating or proposing LLM/NLP methods for processing radiology OR pathology reports
+- Methods include: prompt engineering, fine-tuning, RAG, chain-of-thought, instruction tuning, or similar
+- Outcome: feature extraction, named entity recognition, classification, or structured data extraction
+- Published 2018–2026, English language
+
+EXCLUSION CRITERIA:
+- Studies not involving radiology or pathology text
+- Studies not involving LLMs or deep learning NLP
+- Conference abstracts only (no full text available)
+- Reviews or editorials without primary data
+
+ARTICLE TITLE:
+{title}
+
+ABSTRACT:
+{abstract}
+
+Respond with a JSON object:
+{{"decision": "include" | "exclude" | "uncertain", "reason": "one sentence explanation"}}
