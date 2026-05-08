@@ -5,7 +5,7 @@ build-backend = "setuptools.backends.legacy:build"
 [project]
 name = "llm_systematic_review"
 version = "0.1.0"
-description = "Comparing Boolean search, standard RAG, and agentic RAG for systematic review of LLM optimization strategies in radiology/pathology feature extraction"
+description = "Systematic review toolkit comparing Boolean search, standard RAG, and agentic RAG for radiology and pathology LLM feature extraction"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}

@@ -2,7 +2,9 @@
 
 **MSK | Goel Lab**
 
-A systematic review comparing three retrieval methodologies for evaluating LLM optimization strategies for extracting clinically relevant features from radiology and pathology source documents.
+## Description
+
+This repository supports a systematic review that compares three retrieval methods—Boolean search, standard RAG, and agentic RAG—for identifying and evaluating literature on LLM optimization strategies used for radiology and pathology feature extraction.
 
 ---
 
