@@ -4,23 +4,21 @@
 
 ## Description
 
-This repository supports a systematic review that compares three retrieval methods—Boolean search, standard RAG, and agentic RAG—for identifying and evaluating literature on LLM optimization strategies used for radiology and pathology feature extraction.
+This repository currently supports a **standard Boolean database search workflow** for identifying and evaluating literature on LLM optimization strategies used for radiology and pathology feature extraction. RAG-related materials in the repo are legacy or exploratory and are not part of the active review pipeline.
 
 ---
 
 ## Research Question
 
-> Which retrieval method — Boolean database search, standard RAG, or agentic RAG — most effectively and reproducibly identifies literature on LLM optimization strategies for feature extraction from radiology and pathology reports?
+> How effectively and reproducibly does a standard Boolean database search identify literature on LLM optimization strategies for feature extraction from radiology and pathology reports?
 
 ---
 
-## Methods Under Comparison
+## Current Method
 
 | # | Method | Description |
 |---|--------|-------------|
 | 1 | **Boolean Search (Gold Standard)** | Structured Boolean queries across PubMed/MEDLINE, Embase, Web of Science, Scopus. PRISMA-compliant. PROSPERO-registered. |
-| 2 | **Agentic RAG** | LLM agent autonomously decomposes topic into sub-questions, iteratively retrieves and re-ranks chunks, adjusts strategy dynamically. |
-| 3 | **Standard RAG** | Static vector store (cosine/ANN similarity). Single query → retrieval pass → LLM synthesis. |
 
 ---
 

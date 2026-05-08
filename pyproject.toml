@@ -5,14 +5,14 @@ build-backend = "setuptools.backends.legacy:build"
 [project]
 name = "llm_systematic_review"
 version = "0.1.0"
-description = "Systematic review toolkit comparing Boolean search, standard RAG, and agentic RAG for radiology and pathology LLM feature extraction"
+description = "Systematic review toolkit for standard Boolean database search in radiology and pathology LLM feature extraction"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
   {name = "MSK | Goel Lab"}
 ]
-keywords = ["systematic-review", "RAG", "LLM", "radiology", "pathology", "NLP"]
+keywords = ["systematic-review", "boolean-search", "LLM", "radiology", "pathology", "NLP"]
 
 [project.urls]
 Repository = "https://github.com/msk-goel-lab/llm_systematic_review"
