@@ -1,4 +1,4 @@
-# LLM Systematic Review — Method Comparison
+# LLM Systematic Review
 
 **MSK | Goel Lab**
 
@@ -26,11 +26,11 @@ This repository currently supports a **standard Boolean database search workflow
 
 ```
 llm_systematic_review/          ← PROJECT_ROOT
-├── notebooks/                  7 Jupyter notebooks (01–07) with MSK | Goel Lab headers
+├── notebooks/                  Jupyter notebooks for analysis
 ├── data/
 │   ├── processed/              Non-PHI CSVs: search results, extracted features      ← committed
 │   ├── features/               Embeddings, feature vectors from rad/path docs        ← committed
-│   ├── splits/                 Eval splits for RAG methods                           ← committed
+│   ├── splits/                 Screening splits                                      ← committed
 │   └── corpus/                 Source document metadata (non-PHI)                    ← committed
 ├── docs/
 │   ├── executive_summary.md    Technical overview + code map
@@ -40,24 +40,18 @@ llm_systematic_review/          ← PROJECT_ROOT
 │   └── manuscript_components/  Abstract, appendix, supplementary methods, cover letter
 ├── search/
 │   ├── boolean/                Boolean search strings per database + search log
-│   └── results/                Raw search results per database (pubmed, embase, etc.)
+│   └── results/                Raw search results per database (pubmed, embase, scopus, ieee_xplore, acm, web_of_science)
 ├── reports/                    Exported figures and tables for manuscript             ← committed
-├── prompts/
-│   ├── prompt_library.csv      Prompt versions with metadata
-│   ├── library/                Frozen prompt templates
-│   └── generated/              Agent-derived prompts
 ├── references/                 Academic papers, background literature (see REFERENCES_INDEX.md)
 ├── src/
 │   ├── methods/
-│   │   ├── boolean_search/     Boolean search utilities + deduplication
-│   │   ├── standard_rag/       Standard RAG pipeline
-│   │   └── agentic_rag/        Agentic RAG pipeline
-│   ├── evaluation/             Cross-method evaluation metrics
+│   │   └── boolean_search/     Boolean search utilities + deduplication
+│   ├── evaluation/             Evaluation metrics
 │   ├── extraction/             Feature extraction from rad/path documents
 │   └── utils/                  Shared utilities (parsing, logging, I/O)
 ├── eval/                       Evaluation schemas and metric definitions
 ├── models/                     Model configurations
-├── experiments/                Run tracking (run_id, method, prompt_id, results)
+├── experiments/                Run tracking
 ├── tools/
 │   └── watch_repo.sh           Local macOS notifications for remote repo changes
 ├── .env.example                API key + path template (copy to .env — never commit .env)
@@ -72,7 +66,7 @@ data_private/
 ├── raw/                        Source PDFs with PHI (rad/path reports)
 ├── deidentified/               Redacted PDFs + document_mapping.csv
 ├── extracted_text/             Per-document deidentified .txt files
-└── method_outputs/             Per-method extraction outputs for comparison
+└── screening/                  Screening outputs per stage
 ```
 
 ---
@@ -102,36 +96,24 @@ cp .env.example .env
 | Notebook | Purpose |
 |----------|---------|
 | `01_corpus_preparation.ipynb` | Ingest and preprocess rad/path source documents |
-| `02_boolean_search.ipynb` | Method 1: Boolean search execution, deduplication, PRISMA screening |
-| `03_standard_rag_pipeline.ipynb` | Method 3: Standard RAG — embedding, retrieval, synthesis, NIAH sweep |
-| `04_agentic_rag_pipeline.ipynb` | Method 2: Agentic RAG — agent loop, sub-query decomposition, 3× reproducibility |
-| `05_feature_extraction_eval.ipynb` | Extract features from rad/path docs via each method |
-| `06_method_comparison.ipynb` | Cross-method comparison: precision, recall, F1, coverage |
+| `02_boolean_search.ipynb` | Boolean search execution, deduplication, PRISMA screening |
+| `05_feature_extraction_eval.ipynb` | Extract and evaluate features from included studies |
 | `07_reporting_and_figures.ipynb` | Final figures, tables, and manuscript outputs |
-| `08_agentic_niah_stress_test.ipynb` | **Exploratory**: NIAH stress test for agentic pipeline — iteration convergence, sub-query quality, cross-method comparison |
 
 ---
 
-## Exploratory Analysis — Needle-in-a-Haystack (NIAH)
+## Search Databases
 
-Adapted from [Kamradt (2023)](https://github.com/gkamradt/LLMTest_NeedleInAHaystack).
+| Database | Search Date | Records Retrieved |
+|----------|------------|------------------|
+| PubMed | May 3, 2025 | 28,546 |
+| Embase | May 3, 2025 | 430 |
+| Scopus | May 3, 2025 | 336 |
+| IEEE Xplore | May 2025 | 2,580 |
+| Web of Science | *(to be completed)* | |
+| ACM Digital Library | *(to be completed)* | |
 
-A factual "needle" is inserted at varying depths (10–90%) through haystacks of increasing length (2k–32k tokens). Both RAG pipelines are asked to retrieve it.
-
-The **agentic pipeline** extends the standard (depth × context_length) grid with two extra dimensions:
-
-| Dimension | Standard RAG | Agentic RAG |
-|-----------|:-----------:|:-----------:|
-| Needle retrieved | ✓ | ✓ |
-| Needle in answer | ✓ | ✓ |
-| DeepEval faithfulness | ✓ | ✓ |
-| Sub-query targets needle | — | ✓ |
-| Iteration at first retrieval | — | ✓ |
-
-Key files:
-- `src/methods/agentic_rag/niah.py` — `AgenticNIAHTester` class
-- `notebooks/08_agentic_niah_stress_test.ipynb` — full sweep + 5 figures + cross-method comparison
-- `eval/metrics/metric_definitions.yaml` — formal definitions for all NIAH metrics
+Full search strings per database: `search/boolean/`
 
 ---
 
