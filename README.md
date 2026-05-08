@@ -2,13 +2,23 @@
 
 **MSK | Goel Lab**
 
-A PRISMA-compliant systematic review evaluating the change in large language model (LLM) accuracy following optimization strategies in the summarization of oncologic histories from radiology and pathology free-text reports.
+## Description
+
+This repository currently supports a **standard Boolean database search workflow** for identifying and evaluating literature on LLM optimization strategies used for radiology and pathology feature extraction. RAG-related materials in the repo are legacy or exploratory and are not part of the active review pipeline.
 
 ---
 
 ## Research Question
 
-> What is the change in LLM accuracy following optimization (prompt engineering, fine-tuning, or retrieval-augmented generation) in the summarization of oncologic histories from radiology and/or pathology free-text reports?
+> How effectively and reproducibly does a standard Boolean database search identify literature on LLM optimization strategies for feature extraction from radiology and pathology reports?
+
+---
+
+## Current Method
+
+| # | Method | Description |
+|---|--------|-------------|
+| 1 | **Boolean Search (Gold Standard)** | Structured Boolean queries across PubMed/MEDLINE, Embase, Web of Science, Scopus. PRISMA-compliant. PROSPERO-registered. |
 
 ---
 
