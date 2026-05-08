@@ -1,0 +1,8 @@
+# IEEE Xplore Boolean Search String
+# Version: v1.0
+# Date: May 2025
+# Records retrieved: 2,580
+# Filters: 2016–2026
+
+("Full Text &Metadata":"large language model" OR "Full Text &Metadata":"LLM" OR "Full Text &Metadata":"language model" OR "Full Text &Metadata":"foundation model" OR "Full Text &Metadata":"transformer" OR "Full Text &Metadata":"GPT" OR "Full Text &Metadata":"BERT") AND ("Full Text &Metadata":"summarization" OR "Full Text &Metadata":"extraction") AND ("Full Text &Metadata":"radiology" OR "Full Text &Metadata":"pathology" OR "Full Text &Metadata":"clinical") AND ("Full Text &Metadata":"accuracy" OR "Full Text &Metadata":"performance" OR "Full Text &Metadata":"hallucination" OR "Full Text &Metadata":"fabrication") AND ("Full Text &Metadata":"prompt engineering" OR "Full Text &Metadata":"fine tuning" OR "Full Text &Metadata":"RAG" OR "Full Text &Metadata":"retrieval augmented generation")
+Filters Applied: 2016–2026

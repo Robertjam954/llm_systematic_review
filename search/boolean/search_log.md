@@ -2,11 +2,11 @@
 
 | Field | Value |
 |-------|-------|
-| **Review topic** | LLM optimization strategies for feature extraction from radiology and pathology documents |
+| **Review title** | Change in LLM accuracy following optimization in summarization of oncologic histories: a systematic review |
 | **PROSPERO ID** | *(to be registered)* |
-| **Protocol version** | v0.1 |
+| **Protocol version** | v1.0 |
 | **Search co-designer** | *(librarian name/institution)* |
-| **Date of searches** | *(to be completed)* |
+| **Date of searches** | May 3, 2025 |
 
 ---
 
@@ -14,11 +14,13 @@
 
 | # | Date | Database | String version | Records retrieved | Deduped records | Notes |
 |---|------|----------|---------------|------------------|-----------------|-------|
-| 1 |      | PubMed/MEDLINE | v1.0 | | | |
-| 2 |      | Embase | v1.0 | | | |
-| 3 |      | Web of Science | v1.0 | | | |
-| 4 |      | Scopus | v1.0 | | | |
-| **Total** | | | | | | |
+| 1 | May 3, 2025 | PubMed | v1.0 | 28,546 | | Filters: full text available, 2016–2026 |
+| 2 | May 3, 2025 | Embase | v1.0 | 430 | | Filters: 2016–2026 |
+| 3 | May 3, 2025 | Scopus | v1.0 | 336 | | Filters: PUBYEAR 2016–2026 |
+| 4 | May 2025 | IEEE Xplore | v1.0 | 2,580 | | Filters: 2016–2026 |
+| 5 | *(to be completed)* | Web of Science | v1.0 | *(to be completed)* | | |
+| 6 | *(to be completed)* | ACM Digital Library | v1.0 | *(to be completed)* | | |
+| **Total** | | | | **≥31,892** | *(to be completed)* | Prior to deduplication |
 
 ---
 

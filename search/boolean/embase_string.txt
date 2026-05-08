@@ -1,41 +1,8 @@
 # Embase Boolean Search String (Emtree + free-text)
-# Version: v1.0 (draft — to be finalised with librarian)
-# Date: (to be completed)
-# Filters: English language, 2018–2026
+# Version: v1.0
+# Date: May 3, 2025
+# Records retrieved: 430
+# Filters: 2016–2026
 
-(
-  (
-    'large language model':ab,ti OR 'language model':ab,ti OR
-    'LLM':ab,ti OR 'GPT':ab,ti OR 'GPT-4':ab,ti OR 'ChatGPT':ab,ti OR
-    'generative artificial intelligence':ab,ti OR 'foundation model':ab,ti OR
-    'natural language processing'/exp OR 'NLP':ab,ti
-  )
-  AND
-  (
-    'optimization':ab,ti OR 'optimisation':ab,ti OR
-    'prompt engineering':ab,ti OR 'prompt tuning':ab,ti OR 'prompting':ab,ti OR
-    'fine tuning':ab,ti OR 'fine-tuning':ab,ti OR 'instruction tuning':ab,ti OR
-    'retrieval augmented generation':ab,ti OR 'RAG':ab,ti OR
-    'chain of thought':ab,ti OR 'in-context learning':ab,ti OR
-    'few-shot learning':ab,ti OR 'zero-shot learning':ab,ti
-  )
-  AND
-  (
-    'feature extraction':ab,ti OR 'information extraction':ab,ti OR
-    'named entity recognition':ab,ti OR 'NER':ab,ti OR
-    'clinical information extraction':ab,ti OR 'data extraction':ab,ti OR
-    'structured data extraction':ab,ti
-  )
-  AND
-  (
-    'radiology report':ab,ti OR 'radiological report':ab,ti OR
-    'radiology'/exp OR 'diagnostic imaging'/exp OR
-    'pathology report':ab,ti OR 'pathology'/exp OR
-    'histopathology':ab,ti OR 'surgical pathology':ab,ti OR
-    'cytopathology':ab,ti
-  )
-)
-AND
-[english]/lim
-AND
-[2018–2026]/py
+('large language model'/exp OR 'large language model' OR 'llm' OR 'language model'/exp OR 'language model' OR 'foundation model'/exp OR 'foundation model' OR 'transformer'/exp OR 'transformer' OR 'gpt'/exp OR 'gpt' OR 'bert') AND ('summarization' OR 'extraction'/exp OR 'extraction') AND ('clinical'/exp OR 'clinical' OR 'radiology'/exp OR 'radiology' OR 'pathology'/exp OR 'pathology') AND ('accuracy'/exp OR 'accuracy' OR 'fabrication'/exp OR 'fabrication' OR 'hallucination'/exp OR 'hallucination') AND ('optimization'/exp OR 'optimization' OR 'prompt engineering'/exp OR 'prompt engineering' OR 'fine tuning'/exp OR 'fine tuning' OR 'retrieval augmented generation'/exp OR 'retrieval augmented generation' OR 'rag')
+Time range: 2016 to 2026

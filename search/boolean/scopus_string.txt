@@ -1,0 +1,7 @@
+# Scopus Boolean Search String
+# Version: v1.0
+# Date: May 3, 2025
+# Records retrieved: 336
+# Filters: PUBYEAR > 2016 AND PUBYEAR < 2026
+
+( TITLE-ABS-KEY ( ( "large language model" OR "LLM" OR "language model" OR "foundation model" OR "transformer" OR "GPT" OR "BERT" ) ) AND TITLE-ABS-KEY ( ( "summarization" OR "extraction" ) ) AND TITLE-ABS-KEY ( ( "radiology" OR "pathology" OR "clinical" ) ) AND TITLE-ABS-KEY ( ( "accuracy" OR "performance" OR "hallucination" OR "fabrication" ) ) AND TITLE-ABS-KEY ( ( "prompt engineering" OR "fine tuning" OR "RAG" OR "retrieval augmented generation" ) ) ) AND PUBYEAR > 2016 AND PUBYEAR < 2026
