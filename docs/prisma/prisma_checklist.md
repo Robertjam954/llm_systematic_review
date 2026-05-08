@@ -1,6 +1,6 @@
 # PRISMA 2020 Checklist
 
-**Review title**: Systematic comparison of Boolean search, standard RAG, and agentic RAG for identifying literature on LLM optimization strategies for feature extraction from radiology and pathology documents
+**Review title**: Change in LLM accuracy following optimization in summarization of oncologic histories: a systematic review
 
 **PROSPERO registration**: *(to be completed)*
 

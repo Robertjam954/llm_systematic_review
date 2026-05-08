@@ -1,10 +1,10 @@
 # Abstract — Draft
 
-**Title**: *(to be finalised)*
+**Title**: Change in LLM accuracy following optimization in summarization of oncologic histories: a systematic review
 
-**Background**: Systematic reviews are the cornerstone of evidence synthesis, but traditional Boolean database searches are time-intensive and require specialist expertise. Large language model (LLM)-based retrieval methods — including standard retrieval-augmented generation (RAG) and agentic RAG — offer potential to accelerate the process, but their performance relative to the gold standard is unknown.
+**Background**: Large language models (LLMs) have shown promise in generating structured clinical summaries from unstructured radiology and pathology reports. Optimization strategies — including prompt engineering, fine-tuning, and retrieval-augmented generation (RAG) — have been proposed to improve LLM accuracy. However, the magnitude and consistency of accuracy gains across optimization techniques remain unclear.
 
-**Objectives**: To compare the precision, recall, and reproducibility of Boolean database search, standard RAG, and agentic RAG for conducting a systematic review of LLM optimization strategies for feature extraction from radiology and pathology documents.
+**Objectives**: To quantify the change in LLM accuracy following optimization in the summarization of oncologic histories from radiology and pathology free-text reports, and to characterize which optimization strategies yield the greatest improvements.
 
 **Methods**: *(to be completed after study execution)*
 
@@ -12,4 +12,4 @@
 
 **Conclusions**: *(to be completed)*
 
-**Keywords**: systematic review, retrieval-augmented generation, agentic AI, large language models, radiology, pathology, natural language processing, feature extraction
+**Keywords**: systematic review, large language model, LLM optimization, prompt engineering, fine-tuning, retrieval-augmented generation, radiology, pathology, clinical summarization, oncology

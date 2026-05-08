@@ -4,48 +4,86 @@
 
 ### 2.1 Study Design
 
-We conducted a methodological comparison study evaluating three retrieval strategies for performing a systematic review on LLM optimization strategies for extracting clinically relevant features from radiology and pathology source documents. The three methods were: (1) structured Boolean database search (gold standard), (2) standard retrieval-augmented generation (RAG), and (3) agentic RAG.
+This is a PRISMA-compliant systematic review evaluating changes in large language model (LLM) accuracy following optimization strategies in the summarization of oncologic histories from radiology and pathology free-text reports.
 
-### 2.2 Research Question (PICO/SPIDER Framework)
+### 2.2 Eligibility Criteria
+
+#### 2.2.1 Inclusion Criteria
+
+- Studies evaluating large language model (LLM) performance in generating structured clinical summaries from radiology and/or pathology free-text reports
+- Studies that assess optimization techniques, including: prompt engineering, fine-tuning, or retrieval-augmented generation (RAG)
+- Studies that evaluate performance and include:
+  - baseline accuracy (pre-optimization)
+  - post-optimization accuracy
+  - change in accuracy (explicitly or derivable)
+- Studies published between May 2016 and May 2026
+
+#### 2.2.2 Exclusion Criteria
+
+- Studies without both abstract and full text available
+- Studies that do not report both pre- and post-optimization accuracy
+- Studies that do not use radiologic or pathologic reports as input data
+- Studies published prior to May 2016
+- Studies limited to pure benchmarking without clinical text summarization/extraction tasks
+
+### 2.3 Information Sources
+
+Searches were conducted across the following databases:
+- PubMed
+- Embase
+- Web of Science
+- IEEE Xplore
+- ACM Digital Library
+- Scopus
+
+### 2.4 Search Strategy
+
+Search strings include combinations of the following terms:
+
+**LLM terms**: "large language model" OR "LLM" OR "language model" OR "foundation model" OR "transformer" OR "GPT" OR "BERT"
+
+**Task terms**: "summarization" OR "information extraction" OR "clinical extraction"
+
+**Domain terms**: "radiology" OR "pathology" OR "clinical"
+
+**Performance terms**: "accuracy" OR "performance" OR "hallucination" OR "fabrication"
+
+**Optimization terms**: "prompt engineering" OR "fine tuning" OR "RAG" OR "retrieval augmented generation"
+
+Search strategies were adapted to each database's controlled vocabulary (e.g., MeSH, Emtree) and syntax. Full search strings per database are available in `search/boolean/`.
+
+#### 2.4.1 Search Execution Results (May 3, 2025)
+
+| Database | Records Retrieved | Date | Notes |
+|----------|------------------|------|-------|
+| PubMed | 28,546 | May 3, 2025 | Filters: full text available, 2016–2026 |
+| Embase | 430 | May 3, 2025 | Time range: 2016–2026 |
+| Scopus | 336 | May 3, 2025 | PUBYEAR 2016–2026 |
+| IEEE Xplore | 2,580 | May 2025 | Filters: 2016–2026 |
+| Web of Science | *(to be completed)* | | |
+| ACM Digital Library | *(to be completed)* | | |
+
+Results were exported and will be deduplicated using DOI-first matching, then title+year fuzzy match.
+
+### 2.5 Selection Process
+
+Study selection was conducted in two stages by two independent reviewers (RJ and SB).
+
+**Stage 1 — Title/Abstract Screening**: Titles and abstracts of all retrieved records were screened independently by both reviewers to assess eligibility. To minimize the risk of premature exclusion, any disagreements at this stage were resolved conservatively by retaining the study for full-text review. Interrater agreement during this stage was assessed using Cohen's kappa coefficient.
+
+**Stage 2 — Full-Text Review**: Full-text articles were independently assessed for eligibility by the same two reviewers. Discrepancies were resolved through discussion and consensus. Reasons for exclusion at the full-text stage were recorded. No automation tools were used in the screening process.
+
+### 2.6 Data Collection and Extraction
 
 *(to be completed)*
 
-**Topic**: What LLM optimization strategies (prompt engineering, fine-tuning, chain-of-thought, retrieval augmentation, etc.) have been proposed or evaluated for extracting structured clinical features from unstructured radiology reports and/or pathology reports?
+### 2.7 Risk of Bias Assessment
 
-### 2.3 Method 1 — Boolean Search (Gold Standard)
+*(to be completed)*
 
-#### 2.3.1 Database Selection
-Searches were conducted across: PubMed/MEDLINE, Embase, Web of Science, and Scopus.
+### 2.8 Synthesis
 
-#### 2.3.2 Search String Development
-Boolean search strings were co-designed with an information specialist using a combination of controlled vocabulary (MeSH terms for PubMed; Emtree for Embase) and free-text synonyms, connected with Boolean operators (AND, OR, NOT). See `search/boolean/` for full strings per database.
-
-#### 2.3.3 Search Execution
-Searches were executed on *(date)*. Date limits: 2018–2026 (English language only). Results were exported in RIS format and deduplicated using *(tool)*.
-
-#### 2.3.4 Screening
-Title/abstract screening and full-text review were performed by two independent reviewers using *(tool)*. Conflicts were resolved by discussion or a third reviewer. Inclusion/exclusion criteria are specified in `docs/manuscript/inclusion_criteria.md`.
-
-### 2.4 Method 2 — Agentic RAG
-
-An LLM-powered agent (GPT-4o, temperature = 0.0) was implemented using LangGraph. The agent:
-1. Decomposed the review question into sub-queries via chain-of-thought reasoning
-2. Iteratively retrieved candidate documents from the embedded corpus and via PubMed API
-3. Evaluated retrieved chunks for relevance and adjusted the search strategy
-4. Synthesised findings across retrieved content
-
-Agent configuration is documented in `src/methods/agentic_rag/` and run parameters in `experiments/`.
-
-### 2.5 Method 3 — Standard RAG
-
-A static vector store (FAISS) was constructed from the embedded corpus (`data/features/`). For each standardised query (`data/splits/eval_query_set.csv`):
-1. The query was embedded using `text-embedding-3-large`
-2. Top-k chunks (k = *(value)*) were retrieved via cosine similarity
-3. Retrieved chunks were passed to GPT-4o for synthesis
-
-### 2.6 Evaluation
-
-Evaluation was performed against a manually curated gold standard reference set (`data/splits/gold_standard_set.csv`). Metrics: precision, recall, F1, thematic coverage, time-to-results, and screening burden. See `src/evaluation/metrics.py` and `notebooks/06_method_comparison.ipynb`.
+*(to be completed)*
 
 ---
 

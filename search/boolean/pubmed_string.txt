@@ -1,41 +1,7 @@
 # PubMed/MEDLINE Boolean Search String
-# Version: v1.0 (draft — to be finalised with librarian)
-# Date: (to be completed)
-# Filters: English language, 2018–2026
+# Version: v1.0
+# Date: May 3, 2025
+# Records retrieved: 28,546
+# Filters: Full text available, 2016–2026
 
-(
-  (
-    "large language model"[tiab] OR "LLM"[tiab] OR "language model"[tiab] OR
-    "GPT"[tiab] OR "ChatGPT"[tiab] OR "GPT-4"[tiab] OR "Claude"[tiab] OR
-    "generative AI"[tiab] OR "foundation model"[tiab] OR
-    "natural language processing"[MeSH] OR "NLP"[tiab]
-  )
-  AND
-  (
-    "optimization"[tiab] OR "optimisation"[tiab] OR
-    "prompt engineering"[tiab] OR "prompt tuning"[tiab] OR "prompting"[tiab] OR
-    "fine-tuning"[tiab] OR "fine tuning"[tiab] OR "instruction tuning"[tiab] OR
-    "retrieval augmented generation"[tiab] OR "RAG"[tiab] OR
-    "chain of thought"[tiab] OR "in-context learning"[tiab] OR
-    "few-shot"[tiab] OR "zero-shot"[tiab]
-  )
-  AND
-  (
-    "feature extraction"[tiab] OR "information extraction"[tiab] OR
-    "named entity recognition"[tiab] OR "NER"[tiab] OR
-    "clinical information extraction"[tiab] OR "structured data"[tiab] OR
-    "data extraction"[tiab]
-  )
-  AND
-  (
-    "radiology report"[tiab] OR "radiological report"[tiab] OR
-    "radiology"[MeSH] OR "diagnostic imaging"[MeSH] OR
-    "pathology report"[tiab] OR "pathology"[MeSH] OR
-    "histopathology"[tiab] OR "surgical pathology"[tiab] OR
-    "cytopathology"[tiab]
-  )
-)
-AND
-("2018/01/01"[PDAT] : "2026/12/31"[PDAT])
-AND
-English[Language]
+(("large language model"[Title/Abstract]) OR ("llm"[Title/Abstract]) OR ("language model"[Title/Abstract]) OR ("foundation model"[Title/Abstract])) OR ("transformer"[Title/Abstract]) OR ("gpt"[Title/Abstract]) OR ("bert"[Title/Abstract])) AND ((summarization) OR ("extraction"[Title/Abstract])) AND (("clinical"[Title/Abstract]) OR ("radiology"[Title/Abstract]) OR ("pathology"[Title/Abstract])) AND (("accuracy"[Title/Abstract]) OR ("fabrication"[Title/Abstract]) OR ("hallucination"[Title/Abstract])) AND (("optimization"[Title/Abstract]) OR ("prompt engineering"[Title/Abstract])) OR ("fine tuning"[Title/Abstract]) OR ("retrieval augmented generation"[Title/Abstract]) OR ("rag"[Title/Abstract]))
